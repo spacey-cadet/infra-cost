@@ -340,10 +340,3 @@ thresholds over time, even without online learning in the current scope.
   to a small heuristic price table (documented in-file) so the cost check
   never silently no-ops, but the heuristic is coarse by design and should
   not be treated as billing-accurate.
-- The "new resource type" check currently does a DynamoDB `Query` with a
-  reasonable `Limit` rather than a dedicated GSI; fine for a hackathon
-  demo's plan volume, worth revisiting at scale.
-- `terraform validate`/`terraform plan` could not be run against these
-  `.tf` files in the sandbox used to author this repo (no Terraform CLI
-  in that environment's network allowlist). Run both locally before your
-  first `apply`.
